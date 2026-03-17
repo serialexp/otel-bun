@@ -26,7 +26,9 @@ const headerGetter = {
     return carrier.headers.get(key) ?? undefined;
   },
   keys(carrier: Request): string[] {
-    return [...carrier.headers.keys()];
+    const keys: string[] = [];
+    carrier.headers.forEach((_v, k) => keys.push(k));
+    return keys;
   },
 };
 
@@ -118,8 +120,6 @@ export function setHttpRoute(route: string): void {
   if (span) {
     span.setAttribute(ATTR_HTTP_ROUTE, route);
     // Update span name to use route pattern instead of raw path
-    span.updateName(
-      `${span.attributes?.[ATTR_HTTP_REQUEST_METHOD] ?? "HTTP"} ${route}`,
-    );
+    span.updateName(`HTTP ${route}`);
   }
 }

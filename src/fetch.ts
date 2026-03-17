@@ -28,7 +28,7 @@ export function instrumentFetch(): void {
   if ((globalThis.fetch as any).__otel_instrumented) return;
 
   const instrumented = async (
-    input: RequestInfo | URL,
+    input: string | URL | Request,
     init?: RequestInit,
   ): Promise<Response> => {
     const tracer = trace.getTracer(TRACER_NAME);

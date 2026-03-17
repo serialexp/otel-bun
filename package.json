@@ -2,10 +2,16 @@
   "name": "otel-bun",
   "version": "0.1.0",
   "description": "OpenTelemetry instrumentation for Bun.serve() and fetch()",
-  "module": "src/index.ts",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup"
   },
   "repository": "https://github.com/serialexp/otel-bun",
   "license": "ISC",
@@ -13,7 +19,8 @@
     "@opentelemetry/core": "^2.6.0",
     "@opentelemetry/sdk-trace-base": "^2.6.0",
     "@types/bun": "latest",
-    "just-release": "^0.9.1"
+    "just-release": "^0.9.1",
+    "tsup": "^8.5.1"
   },
   "peerDependencies": {
     "typescript": "^5"
