@@ -1,6 +1,6 @@
 {
   "name": "otel-bun",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "OpenTelemetry instrumentation for Bun.serve() and fetch()",
   "type": "module",
   "exports": {
