@@ -1,6 +1,6 @@
 {
   "name": "otel-bun",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "OpenTelemetry instrumentation for Bun.serve() and fetch()",
   "type": "module",
   "exports": {
@@ -9,7 +9,9 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup"
   },
